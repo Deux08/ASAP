@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--colors for dark mode-->
+    <color name="contentBodyColor">#2A2E43</color>
+    <color name="bottomNavigationBackground">#212433</color>
+
+</resources>
