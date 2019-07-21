@@ -126,8 +126,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else{
                     showMessage(task.getException().getMessage());
-                    loginProgressBar.setVisibility(View.VISIBLE);
-                    loginBtn.setVisibility(View.INVISIBLE);
+                    loginProgressBar.setVisibility(View.INVISIBLE);
+                    loginBtn.setVisibility(View.VISIBLE);
                 }
 
             }
