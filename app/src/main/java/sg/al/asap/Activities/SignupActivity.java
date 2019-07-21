@@ -106,12 +106,17 @@ public class SignupActivity extends AppCompatActivity {
                 final String name= userName.getText().toString();
 
                 //validation
-                if(email.isEmpty() || password.isEmpty() || name.isEmpty() || !password.equals(confirmPass)){
+                if(email.isEmpty() || password.isEmpty() || name.isEmpty()){
 
                     showMessage("Please fill in all required fields");
                     regBtn.setVisibility(View.VISIBLE);
                     loadingProgressBar.setVisibility(View.INVISIBLE);
 
+                }
+                else if(!password.equals(confirmPass)){
+                    showMessage("Passwords don't match");
+                    regBtn.setVisibility(View.VISIBLE);
+                    loadingProgressBar.setVisibility(View.INVISIBLE);
                 }
                 else{
                     //all fields are filled and proceed on creating the user account
