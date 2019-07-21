@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "225820624237",
+    "firebase_url": "https://asap-d1a36.firebaseio.com",
+    "project_id": "asap-d1a36",
+    "storage_bucket": "asap-d1a36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225820624237:android:68172d4add907f60",
+        "android_client_info": {
+          "package_name": "sg.al.asap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225820624237-vpgmeg8i5htj1gk11ipob6bgtglc249e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sg.al.asap",
+            "certificate_hash": "91a089fbc4e4a7ee46f10a55a81e94fb0fc8c8ab"
+          }
+        },
+        {
+          "client_id": "225820624237-dd5r4651n0tl4vbie2d7080bc5eg27ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ5pQkWnkht6dBc4Zje8bEzzjCChAjTYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225820624237-dd5r4651n0tl4vbie2d7080bc5eg27ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
