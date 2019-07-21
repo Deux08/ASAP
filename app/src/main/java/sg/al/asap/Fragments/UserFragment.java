@@ -1,4 +1,4 @@
-package sg.al.asap;
+package sg.al.asap.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import sg.al.asap.Activities.SignupActivity;
+import sg.al.asap.R;
 
 public class UserFragment extends Fragment {
     @Nullable

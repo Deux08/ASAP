@@ -18,6 +18,11 @@
         <activity
             android:name=".Activities.SignupActivity"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +30,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activities.LoginActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="ASAP"
             android:theme="@style/AppTheme.NoActionBar">
 

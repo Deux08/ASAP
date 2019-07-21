@@ -3,19 +3,25 @@ package sg.al.asap.Activities;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +35,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import sg.al.asap.MainActivity;
 import sg.al.asap.R;
 
 public class SignupActivity extends AppCompatActivity {
@@ -38,6 +43,8 @@ public class SignupActivity extends AppCompatActivity {
     static int PReqCode = 1 ;
     static int REQUESTCODE = 1;
     Uri pickedImgUri;
+    private TextView redirectToLogIn;
+
 
     private EditText userName, userEmail, userPassword, userConfirmPassword;
     private ProgressBar loadingProgressBar;
@@ -52,7 +59,6 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-        //inu views
         userName = findViewById(R.id.regName);
         userEmail = findViewById(R.id.regMail);
         userPassword = findViewById(R.id.regPassword);
@@ -61,6 +67,29 @@ public class SignupActivity extends AppCompatActivity {
         regBtn = findViewById(R.id.regBtn);
         loadingProgressBar.setVisibility(View.INVISIBLE);
 
+        //spannable string (parts of string can be clicked)
+        redirectToLogIn = findViewById(R.id.clickableLogIn);
+        String text =  "Already have an account? Log In";
+        SpannableString ss = new SpannableString(text);
+        ClickableSpan link = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(loginActivity);
+                finish();
+            }
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setColor(Color.rgb(119, 17, 150));
+                ds.setUnderlineText(false);
+            }
+        };
+        ss.setSpan(link, 25, 31, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        redirectToLogIn.setText(ss);
+        redirectToLogIn.setMovementMethod(LinkMovementMethod.getInstance());
+        //spannable string end
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -188,7 +217,7 @@ public class SignupActivity extends AppCompatActivity {
 
     //method shows toast message
     private void showMessage(String message) {
-        Toast.makeText(getApplicationContext(), "message", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
     private void openGallery() {
