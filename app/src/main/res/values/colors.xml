@@ -9,6 +9,7 @@
     <!--colors for light mode-->
     <color name="contentBodyColor">#FCFCFC</color>
     <color name="bottomNavigationBackground">#ebebeb</color>
+    <color name="userProfile">#bebdc9</color>
 
 
 </resources>

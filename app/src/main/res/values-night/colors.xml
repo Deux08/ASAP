@@ -3,5 +3,6 @@
     <!--colors for dark mode-->
     <color name="contentBodyColor">#2A2E43</color>
     <color name="bottomNavigationBackground">#212433</color>
+    <color name="userProfile">#121129</color>
 
 </resources>
