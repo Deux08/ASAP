@@ -9,7 +9,8 @@
     <!--colors for light mode-->
     <color name="contentBodyColor">#FCFCFC</color>
     <color name="bottomNavigationBackground">#ebebeb</color>
-    <color name="userProfile">#bebdc9</color>
 
+
+    <color name="icons">#FC4926</color>
 
 </resources>

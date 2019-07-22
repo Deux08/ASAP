@@ -18,7 +18,7 @@ public class HomeFragment extends Fragment {
 
     ListView listViewgalley;
     String itemList[] = {"shirt", "shoe", "hat", "bag", "apple"};
-    int images  [] = {R.drawable.shirt, R.drawable.shoe, R.drawable.hat, R.drawable.bag, R.drawable.apple}
+//    int images  [] = {R.drawable.shirt, R.drawable.shoe, R.drawable.hat, R.drawable.bag, R.drawable.apple};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
