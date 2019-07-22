@@ -97,6 +97,7 @@ public class SignupActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 regBtn.setVisibility(View.INVISIBLE);
                 loadingProgressBar.setVisibility(View.VISIBLE);
 
@@ -157,8 +158,14 @@ public class SignupActivity extends AppCompatActivity {
                             //user account is created
                             showMessage("Account is created");
 
-                            //after creation name and profile pic must be updated
-                            updateUserInfo(name, pickedImgUri, mAuth.getCurrentUser());
+                            if(pickedImgUri != null){
+                                //after creation name and profile pic must be updated
+                                updateUserInfo(name, pickedImgUri, mAuth.getCurrentUser());
+                            }
+                            else{
+                                updateUI();
+                            }
+
                         }
                         else{
                             //account creation failed
