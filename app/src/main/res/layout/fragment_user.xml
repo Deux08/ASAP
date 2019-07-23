@@ -8,13 +8,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="642dp"
+        android:layout_height="586dp"
         android:orientation="vertical"
         android:padding="30dp">
 
         <TextView
             style="@style/viewParent.headerText"
-            android:text="Settings" />
+            android:text="User" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,14 +32,16 @@
                 style="@style/viewParent.headerText"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/profileCircleImageView"
-                android:text="User 1"
+                android:text="User"
+                android:textColor="#fff"
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/userEmail"
                 style="@style/viewParent.headerText"
                 android:layout_below="@id/usernameTextView"
                 android:layout_toRightOf="@id/profileCircleImageView"
-                android:text="Edit personal details"
+                android:text="Email"
                 android:textColor="#5D5C5C"
                 android:textSize="16sp" />
 
@@ -62,39 +64,34 @@
             android:text="Profile" />
 
         <TextView
+            android:id="@+id/editProf"
             style="@style/viewParent.headerText.settingsTextIcon"
             android:drawableLeft="@drawable/ic_edit_profile"
             android:text="Edit Profile" />
 
         <TextView
+            android:id="@+id/changePassword"
             style="@style/viewParent.headerText.settingsTextIcon"
             android:layout_marginTop="10dp"
+            android:clickable="true"
             android:drawableLeft="@drawable/ic_edit_password"
-            android:text="Change Password" />
-
-        <TextView
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:text="Notifications" />
+            android:text="Change Password"
+            />
 
         <Switch
+            android:id="@+id/notification"
             style="@style/settingsText"
             android:checked="true"
             android:drawableLeft="@drawable/ic_notifications"
             android:text="Notifications" />
 
         <TextView
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:text="Regional" />
-
-        <TextView
+            android:id="@+id/logOut"
             style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/ic_languages"
-            android:text="Language" />
-
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
+            android:clickable="true"
             android:drawableLeft="@drawable/ic_logout"
-            android:text="Logout" />
+            android:text="Logout"
+            tools:ignore="KeyboardInaccessibleWidget" />
 
 
         <!--<TextView-->
