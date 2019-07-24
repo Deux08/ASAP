@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
+import sg.al.asap.Activities.LoginActivity;
 import sg.al.asap.Activities.MainActivity;
 import sg.al.asap.Activities.SignupActivity;
 import sg.al.asap.R;
@@ -44,7 +45,7 @@ public class UserFragment extends Fragment {
         // do your variables initialisations here except Views!!!
     }
 
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(final View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         // initialise your views
         ImageView profilePic = (ImageView) view.findViewById(R.id.profileCircleImageView);
@@ -61,6 +62,14 @@ public class UserFragment extends Fragment {
         currentuser = mAuth.getCurrentUser();
 
         ((MainActivity)getActivity()).update();
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).signOut();
+
+            }
+        });
     }
 
 

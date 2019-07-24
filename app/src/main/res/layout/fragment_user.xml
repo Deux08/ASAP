@@ -90,6 +90,7 @@
             style="@style/viewParent.headerText.settingsTextIcon"
             android:clickable="true"
             android:drawableLeft="@drawable/ic_logout"
+            android:onClick="signOut"
             android:text="Logout"
             tools:ignore="KeyboardInaccessibleWidget" />
 

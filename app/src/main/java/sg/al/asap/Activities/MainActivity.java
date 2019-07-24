@@ -1,5 +1,6 @@
 package sg.al.asap.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -88,19 +89,24 @@ public class MainActivity extends AppCompatActivity /*implements NavigationView.
          userName = (TextView) findViewById(R.id.usernameTextView);
          userEmail = (TextView) findViewById(R.id.userEmail);
 
-        if(currentuser.getEmail() == null || currentuser.getDisplayName() == null){
-          userName.setText("User not found");
-        }
-        else{
+//        if(currentuser.getEmail() == null || currentuser.getDisplayName() == null){
+//          userName.setText("User not found");
+//        }
+//        else{
             userEmail.setText(currentuser.getEmail());
             userName.setText(currentuser.getDisplayName());
-        }
+//        }
 
         //use glide(library) to load user image
         Glide.with(this).load(currentuser.getPhotoUrl()).into(profilePic);
 
     }
 
+    public void signOut(){
+        mAuth.signOut();
+        Intent login = new Intent(this, LoginActivity.class);
+        startActivity(login);
+    }
 
 
 }
