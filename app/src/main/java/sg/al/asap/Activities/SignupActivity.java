@@ -35,6 +35,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+
 import sg.al.asap.R;
 
 public class SignupActivity extends AppCompatActivity {
@@ -181,10 +183,15 @@ public class SignupActivity extends AppCompatActivity {
 
     //update user photo and name
     private void updateUserInfo(final String name, Uri pickedImgUri, final FirebaseUser currentUser) {
+        StorageReference mStorage;
+        final StorageReference imageFilePath;
 
         //1. upload photo to firebase storage and get url
-        StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
-        final StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
+//        if(pickedImgUri == null){
+//            pickedImgUri = Uri.fromFile(new File("mipmap-hdpi/ic_launcher.png"));
+//        }
+        mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
+        imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
         imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
