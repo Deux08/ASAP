@@ -15,7 +15,15 @@
         <!--tools:layout_editor_absoluteY="0dp"-->
         <!--tools:srcCompat="@tools:sample/avatars" />-->
 
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
 
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/pName"
+        app:layout_constraintStart_toStartOf="parent"/>
     <TextView
         android:id="@+id/pName"
         android:layout_width="170dp"

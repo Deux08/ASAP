@@ -74,10 +74,14 @@ public class ProductAdapter extends BaseAdapter {
         View itemView = convertView;
 
         itemView = LayoutInflater.from(context).inflate(R.layout.product_row,parent,false);
+//        product name
         TextView productName = itemView.findViewById(R.id.pName);
         productName.setText(productsList.get(position).getName());
+//        product price
         TextView productPrice = itemView.findViewById(R.id.pPrice);
         productPrice.setText(String.valueOf(productsList.get(position).getCost()));
+
+
 
         return itemView;
     }
