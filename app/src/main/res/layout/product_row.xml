@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<ImageView-->
+        <!--android:id="@+id/productpic"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--android:layout_width="90dp"-->
+        <!--android:layout_height="90dp"-->
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="0dp"-->
+        <!--tools:srcCompat="@tools:sample/avatars" />-->
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/pName"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/pName"
+        android:layout_width="170dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Product Name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pPrice"
+        app:layout_constraintStart_toStartOf="parent"/>
+        <!--app:layout_constraintTop_toBottomOf="@+id/productpic" />-->
+
+    <TextView
+        android:id="@+id/pPrice"
+        android:layout_width="170dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="price"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pName" />
+
+
+
+</android.support.constraint.ConstraintLayout>
