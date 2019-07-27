@@ -15,35 +15,6 @@ import java.util.List;
 
 import sg.al.asap.R;
 
-//public class ProductAdapter extends ArrayAdapter<Product> {
-//    private Context mContext;
-//    int mResource;
-//
-//    public ProductAdapter(Context context, int resource, List<Product> objects) {
-//        super(context, resource, objects);
-//    }
-//    @Override
-//    public View getView(int position, View convertView, ViewGroup parent)
-//    {
-//        String name =getItem(position).getName();
-//        int cost = getItem(position).getCost();
-//
-////        creating the object
-//
-//        Product product = new Product(name, cost);
-//        LayoutInflater inflater = LayoutInflater.from(mContext);
-//        convertView = inflater.inflate(mResource, parent, false);
-//
-//        TextView tvname = (TextView) convertView.findViewById(R.id.songTitle);
-//        TextView tvcost = (TextView) convertView.findViewById(R.id.songSubtitle);
-//        ImageView ivAlbumArt = (ImageView) convertView.findViewById(R.id.albumArt);
-//
-//        return  convertView;
-//
-//    }
-//
-//}
-
 public class ProductAdapter extends BaseAdapter {
 
     Context context;
@@ -80,9 +51,45 @@ public class ProductAdapter extends BaseAdapter {
 //        product price
         TextView productPrice = itemView.findViewById(R.id.pPrice);
         productPrice.setText(String.valueOf(productsList.get(position).getCost()));
+//        product image
+        ImageView productimage =itemView.findViewById(R.id.ppic);
+        productimage.setImageResource(R.drawable.capybara1);
 
 
 
         return itemView;
     }
 }
+
+
+
+
+
+//public class ProductAdapter extends ArrayAdapter<Product> {
+//    private Context mContext;
+//    int mResource;
+//
+//    public ProductAdapter(Context context, int resource, List<Product> objects) {
+//        super(context, resource, objects);
+//    }
+//    @Override
+//    public View getView(int position, View convertView, ViewGroup parent)
+//    {
+//        String name =getItem(position).getName();
+//        int cost = getItem(position).getCost();
+//
+////        creating the object
+//
+//        Product product = new Product(name, cost);
+//        LayoutInflater inflater = LayoutInflater.from(mContext);
+//        convertView = inflater.inflate(mResource, parent, false);
+//
+//        TextView tvname = (TextView) convertView.findViewById(R.id.songTitle);
+//        TextView tvcost = (TextView) convertView.findViewById(R.id.songSubtitle);
+//        ImageView ivAlbumArt = (ImageView) convertView.findViewById(R.id.albumArt);
+//
+//        return  convertView;
+//
+//    }
+//
+//}

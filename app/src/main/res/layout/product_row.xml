@@ -16,6 +16,7 @@
         <!--tools:srcCompat="@tools:sample/avatars" />-->
 
     <ImageView
+        android:id="@+id/ppic"
         android:layout_width="170dp"
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
