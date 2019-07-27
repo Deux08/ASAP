@@ -50,6 +50,24 @@ public class SearchFragment extends Fragment {
         avengers.add("Scarlet Witch");
         avengers.add("Falcon");
         avengers.add("War Machine");
+        avengers.add("Iron Man");
+        avengers.add("Captain America");
+        avengers.add("Vision");
+        avengers.add("Hawk Eye");
+        avengers.add("Ant-Man");
+        avengers.add("Spider-Man");
+        avengers.add("Captain Marvel");
+        avengers.add("Doctor Strange");
+        avengers.add("Black Panther");
+        avengers.add("Hulk");
+        avengers.add("Star Lord");
+        avengers.add("Rocket");
+        avengers.add("Groot");
+        avengers.add("Thor");
+        avengers.add("Quicksilver");
+        avengers.add("Scarlet Witch");
+        avengers.add("Falcon");
+        avengers.add("War Machine");
 
         SearchView searchBar = (SearchView) view.findViewById(R.id.searchBar);
         ListView searchList = (ListView) view.findViewById(R.id.searchList);

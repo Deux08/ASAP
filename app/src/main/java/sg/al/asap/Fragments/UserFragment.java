@@ -23,6 +23,7 @@ import org.w3c.dom.Text;
 
 import sg.al.asap.Activities.LoginActivity;
 import sg.al.asap.Activities.MainActivity;
+import sg.al.asap.Activities.ResetPasswordActivity;
 import sg.al.asap.Activities.SignupActivity;
 import sg.al.asap.R;
 
@@ -68,6 +69,14 @@ public class UserFragment extends Fragment {
             public void onClick(View v) {
                 ((MainActivity)getActivity()).signOut();
 
+            }
+        });
+
+        changePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent forgetPass = new Intent(getActivity(), ResetPasswordActivity.class);
+                startActivity(forgetPass);
             }
         });
     }

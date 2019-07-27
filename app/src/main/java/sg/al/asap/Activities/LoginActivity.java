@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private Intent MainActivity;
     private ImageView loginPhoto;
     private TextView redirectToSignUp;
+    private TextView forgotEmail;
 
 
     @Override
@@ -49,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         loginProgressBar = findViewById(R.id.login_progressBar);
         mAuth = FirebaseAuth.getInstance();
+        forgotEmail = findViewById(R.id.forgot_password_tv);
+
         MainActivity = new Intent(this, sg.al.asap.Activities.MainActivity.class);
 
         //spannable string (parts of string can be clicked)
@@ -87,6 +90,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        forgotEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                forgetPass();
+            }
+        });
+
         loginProgressBar.setVisibility(View.INVISIBLE);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +119,12 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void forgetPass(){
+        Intent forgetPass = new Intent(getApplicationContext(), ResetPasswordActivity.class);
+        startActivity(forgetPass);
+        finish();
     }
 
     private void signIn(String email, String password) {
