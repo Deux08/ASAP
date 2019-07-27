@@ -5,13 +5,16 @@ import android.media.Image;
 public class Product {
     private String name;
     private int cost;
-    private Image image;
+    private String filePath;
 
-    public Product(String names, int costs) {
+    public Product(String names, int costs, String filePath) {
         this.name = names;
         this.cost = costs;
+        this.filePath = filePath;
 
-
+    }
+    public String getImageFilePath() {
+        return filePath;
     }
 
     public String getName() {

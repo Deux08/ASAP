@@ -37,12 +37,12 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.galleryLV);
 
 
-        productslist.add(new Product("Gucci bag", 3));
-        productslist.add(new Product("Nike shoes", 10));
-        productslist.add(new Product("FIla bag", 9));
-        productslist.add(new Product("Chanel perfume", 6));
-        productslist.add(new Product("Unik shirt", 5));
-        productslist.add(new Product("dog", 11));
+        productslist.add(new Product("Gucci bag", 3,"drawable/capybara1.jpg"));
+        productslist.add(new Product("Nike shoes", 10,"drawable/capybara1.jpg"));
+        productslist.add(new Product("FIla bag", 9,"drawable/capybara1.jpg"));
+        productslist.add(new Product("Chanel perfume", 6,"drawable/capybara1.jpg"));
+        productslist.add(new Product("Unik shirt", 5,"drawable/capybara1.jpg"));
+        productslist.add(new Product("dog", 11,"drawable/capybara1.jpg"));
 
 
         ProductAdapter adapter = new ProductAdapter(view.getContext(), productslist);
@@ -89,11 +89,18 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Log.i("testy", "I Clicked on Row " + position + " and it worked!");
+                Product product = productslist.get(position);
+                Log.i("testy", "I Clicked on Row " + position + " and it shows ");
+
                 Fragment fragment = new ProductFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("Name", product.getName());
+                bundle.putInt("Cost", product.getCost());
+                bundle.putString("Image", product.getImageFilePath());
+                fragment.setArguments(bundle);
+
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_layout, fragment);
