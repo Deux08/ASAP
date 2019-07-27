@@ -55,6 +55,14 @@ public class ProductAdapter extends BaseAdapter {
         ImageView productimage =itemView.findViewById(R.id.ppic);
         productimage.setImageResource(R.drawable.capybara1);
 
+//        itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                new ProductFragment();
+//            }
+//        });
+
+
 
 
         return itemView;
