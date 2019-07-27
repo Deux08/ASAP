@@ -91,6 +91,7 @@ public class HomeFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
+
                 Log.i("testy", "I Clicked on Row " + position + " and it worked!");
                 Fragment fragment = new ProductFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
