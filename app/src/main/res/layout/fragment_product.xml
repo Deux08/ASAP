@@ -57,7 +57,6 @@
         android:text="Add to cart"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColorHighlight="white"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
