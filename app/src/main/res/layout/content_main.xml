@@ -7,11 +7,26 @@
     tools:showIn="@layout/app_bar_main"
     style="@style/parent.contentLayout">
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/fragment_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp" />
+    <!--<android.support.v4.widget.NestedScrollView-->
+        <!--android:id="@+id/fragment_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--tools:layout_editor_absoluteX="20dp"-->
+        <!--tools:layout_editor_absoluteY="20dp" >-->
+
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+    <ScrollView
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="20dp"
+    tools:layout_editor_absoluteY="20dp" >
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical" />-->
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

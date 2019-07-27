@@ -7,10 +7,9 @@
     <ListView
         android:id="@+id/galleryLV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#f00"
-        android:dividerHeight="1dp"
+        android:layout_height="861dp"
         android:layout_margin="10dp"
-        />
+        android:divider="#f00"
+        android:dividerHeight="1dp" />
 
 </LinearLayout>
