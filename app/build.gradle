@@ -40,9 +40,16 @@ dependencies {
     //shake listener
     implementation 'com.github.tbouron.shakedetector:library:1.0.0@aar'
 
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+
+
 }
 
 //apply plugin: 'com.google.gms.google-services'

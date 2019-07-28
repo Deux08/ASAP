@@ -1,6 +1,7 @@
 package sg.al.asap.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -13,10 +14,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.tbouron.shakedetector.library.ShakeDetector;
 
+import sg.al.asap.Activities.CheckOutActivity;
 import sg.al.asap.R;
 
 public class CartFragment extends Fragment {
@@ -50,6 +53,15 @@ public class CartFragment extends Fragment {
 
     public void onViewCreated(final View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+
+        Button checkOutBtn = (Button)view.findViewById(R.id.checkoutBtn);
+        checkOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CheckOutActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
