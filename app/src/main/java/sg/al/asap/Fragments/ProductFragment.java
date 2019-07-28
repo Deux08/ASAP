@@ -75,14 +75,5 @@ public class ProductFragment extends Fragment {
 
             }
         });
-
-
-//        addBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
     }
-
 }

@@ -14,11 +14,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.tbouron.shakedetector.library.ShakeDetector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import sg.al.asap.Activities.CheckOutActivity;
 import sg.al.asap.R;
@@ -27,6 +32,7 @@ public class CartFragment extends Fragment {
 
     TextView Name;
     TextView Cost;
+//    List<String> cartList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -54,6 +60,16 @@ public class CartFragment extends Fragment {
             }
         });
 
+//        ListView cartLV = getActivity().findViewById(R.id.cartLV);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.cart_listview, cartList);
+//
+//        Bundle bundle = this.getArguments();
+//        String getName = bundle.getString("Name", "Test");
+//        int getCost = bundle.getInt("Cost");
+//
+//        cartList.add(getName + " " + getCost);
+//        cartLV.setAdapter(adapter);
+
     }
 
     public void onViewCreated(final View view, Bundle savedInstanceState){
@@ -64,14 +80,12 @@ public class CartFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
 
-         String getName = bundle.getString("Name", "Test");
-         int getCost = bundle.getInt("Cost");
-
-
-        Name.setText(getName);
-        Cost.setText("$"  + getCost);
-
-
+        if (bundle != null) {
+            String getName = bundle.getString("Name", "Test");
+            int getCost = bundle.getInt("Cost");
+            Name.setText(getName);
+            Cost.setText("$"  + getCost);
+        }
 
         Button checkOutBtn = (Button)view.findViewById(R.id.checkoutBtn);
         checkOutBtn.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +95,6 @@ public class CartFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
 
     }
 }
