@@ -53,7 +53,7 @@ public class ProductAdapter extends BaseAdapter {
         productPrice.setText(String.valueOf(productsList.get(position).getCost()));
 //        product image
         ImageView productimage =itemView.findViewById(R.id.ppic);
-        int id = context.getResources().getIdentifier(String.valueOf(productsList),null,context.getPackageName());
+        int id = context.getResources().getIdentifier(String.valueOf(productsList),"drawable",context.getPackageName());
         productimage.setImageResource(id);
         // change this to id ^
         return itemView;
