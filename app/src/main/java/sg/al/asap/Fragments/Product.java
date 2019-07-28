@@ -32,13 +32,4 @@ public class Product {
         this.cost = costs;
     }
 
-//    public void setFilePath (String imgs){
-//        this.filePath = imgs;
-//    }
-
-//    public Image getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(Image images) { this.image = images;}
 }
