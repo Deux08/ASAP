@@ -38,12 +38,12 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.galleryLV);
 
 
-        productslist.add(new Product("Gucci bag", 3,"drawable/capybara1.jpg"));
-        productslist.add(new Product("Nike shoes", 10,"drawable/capybara1.jpg"));
-        productslist.add(new Product("FIla bag", 9,"drawable/capybara1.jpg"));
-        productslist.add(new Product("Chanel perfume", 6,"drawable/capybara1.jpg"));
-        productslist.add(new Product("Unik shirt", 5,"drawable/capybara1.jpg"));
-        productslist.add(new Product("dog", 11,"drawable/capybara1.jpg"));
+        productslist.add(new Product("Gucci bag", 3, Uri.parse("res:///" + R.drawable.capybara1).toString()));
+        productslist.add(new Product("Nike shoes", 10,Uri.parse("res:///" + R.drawable.capybara1).toString()));
+        productslist.add(new Product("FIla bag", 9,Uri.parse("res:///" + R.drawable.capybara1).toString()));
+        productslist.add(new Product("Chanel perfume", 6,Uri.parse("res:///" + R.drawable.capybara1).toString()));
+        productslist.add(new Product("Unik shirt", 5,Uri.parse("res:///" + R.drawable.capybara1).toString()));
+        productslist.add(new Product("dog", 11,Uri.parse("res:///" + R.drawable.capybara1).toString()));
 
 
         ProductAdapter adapter = new ProductAdapter(view.getContext(), productslist);

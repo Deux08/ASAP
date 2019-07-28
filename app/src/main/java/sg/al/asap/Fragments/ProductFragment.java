@@ -42,14 +42,14 @@ public class ProductFragment extends Fragment {
         Bundle bundle = this.getArguments();
 
         String getName = bundle.getString("Name", "Test");
-        String getCost = bundle.getString("Cost", "Test");
+        int getCost = bundle.getInt("Cost");
         String getImageFilePath = bundle.getString("Image", "Test");
-        File file = new File(getImageFilePath);
+        Uri imgUri = Uri.parse(getImageFilePath);
 
 
         Name.setText(getName);
         Cost.setText("$"  + getCost);
-        image.setImageURI(Uri.fromFile(file));
+        image.setImageURI(imgUri);
     }
 
 }
