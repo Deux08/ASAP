@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.tbouron.shakedetector.library.ShakeDetector;
@@ -23,6 +24,10 @@ import sg.al.asap.Activities.CheckOutActivity;
 import sg.al.asap.R;
 
 public class CartFragment extends Fragment {
+
+    TextView Name;
+    TextView Cost;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,6 +59,20 @@ public class CartFragment extends Fragment {
     public void onViewCreated(final View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
+        Name = view.findViewById(R.id.item_name);
+        Cost = view.findViewById(R.id.item_price);
+
+        Bundle bundle = this.getArguments();
+
+         String getName = bundle.getString("Name", "Test");
+         int getCost = bundle.getInt("Cost");
+
+
+        Name.setText(getName);
+        Cost.setText("$"  + getCost);
+
+
+
         Button checkOutBtn = (Button)view.findViewById(R.id.checkoutBtn);
         checkOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +81,9 @@ public class CartFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+
 
     }
 }

@@ -47,8 +47,8 @@ public class ProductFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
 
-        String getName = bundle.getString("Name", "Test");
-        int getCost = bundle.getInt("Cost");
+        final String getName = bundle.getString("Name", "Test");
+        final int getCost = bundle.getInt("Cost");
         int getImageFilePath = bundle.getInt("Image");
 //        Uri imgUri = Uri.parse(getImageFilePath);
 
@@ -61,9 +61,28 @@ public class ProductFragment extends Fragment {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Fragment fragment = new CartFragment();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("Name", getName);
+                bundle1.putInt("Cost", getCost);
+                fragment.setArguments(bundle1);
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_layout, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
 
             }
         });
+
+
+//        addBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
     }
 
 }
