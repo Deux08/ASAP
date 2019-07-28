@@ -38,13 +38,16 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.galleryLV);
 
 
-//        productslist.add(new Product("bag", 3, "R.drawable.capybara1"));
-        productslist.add(new Product("Gucci bag", 3, Uri.parse("res:///" + R.drawable.capybara1).toString()));
-        productslist.add(new Product("Nike shoes", 10,Uri.parse("res:///" + R.drawable.capybara2).toString()));
-        productslist.add(new Product("FIla bag", 9,Uri.parse("res:///" + R.drawable.capybara3).toString()));
-        productslist.add(new Product("Chanel perfume", 6,Uri.parse("res:///" + R.drawable.capybara4).toString()));
-        productslist.add(new Product("Unik shirt", 5,Uri.parse("res:///" + R.drawable.capybara5).toString()));
-        productslist.add(new Product("dog", 11,Uri.parse("res:///" + R.drawable.capybara5).toString()));
+        productslist.add(new Product("bag", 3, R.drawable.capybara1));
+        productslist.add(new Product("bag1", 5, R.drawable.capybara2));
+        productslist.add(new Product("bag2", 7, R.drawable.capybara3));
+
+//        productslist.add(new Product("Gucci bag", 3, Uri.parse("res:///" + R.drawable.capybara1).toString()));
+//        productslist.add(new Product("Nike shoes", 10,Uri.parse("res:///" + R.drawable.capybara2).toString()));
+//        productslist.add(new Product("FIla bag", 9,Uri.parse("res:///" + R.drawable.capybara3).toString()));
+//        productslist.add(new Product("Chanel perfume", 6,Uri.parse("res:///" + R.drawable.capybara4).toString()));
+//        productslist.add(new Product("Unik shirt", 5,Uri.parse("res:///" + R.drawable.capybara5).toString()));
+//        productslist.add(new Product("dog", 11,Uri.parse("res:///" + R.drawable.capybara5).toString()));
 
 
         ProductAdapter adapter = new ProductAdapter(view.getContext(), productslist);
@@ -71,7 +74,7 @@ public class HomeFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("Name", product.getName());
                 bundle.putInt("Cost", product.getCost());
-                bundle.putString("Image", product.getImageFilePath());
+                bundle.putInt("Image", product.getImageFilePath());
                 fragment.setArguments(bundle);
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
