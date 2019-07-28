@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.galleryLV);
 
 
-        productslist.add(new Product("Gucci bag", 3, R.drawable.guccibag));
+        productslist.add(new Product("Gucci bag", 3, R.drawable.gucci_bag));
         productslist.add(new Product("soft toy", 5, R.drawable.bag));
         productslist.add(new Product("bag2", 7, R.drawable.shoe));
         productslist.add(new Product("hat", 100, R.drawable.hat));
