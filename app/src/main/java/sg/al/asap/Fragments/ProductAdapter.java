@@ -43,6 +43,7 @@ public class ProductAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View itemView = convertView;
+        Product product = productsList.get(position);
 
         itemView = LayoutInflater.from(context).inflate(R.layout.product_row,parent,false);
 //        product name
@@ -53,8 +54,10 @@ public class ProductAdapter extends BaseAdapter {
         productPrice.setText(String.valueOf(productsList.get(position).getCost()));
 //        product image
         ImageView productimage =itemView.findViewById(R.id.ppic);
-        int id = context.getResources().getIdentifier(String.valueOf(productsList),"drawable",context.getPackageName());
+        int id = context.getResources().getIdentifier(String.valueOf(product.getImageFilePath()),null,context.getPackageName());
         productimage.setImageResource(id);
+//        productimage.setImageResource(context.getResources().getDrawable(product.getImageFilePath()));
+//        productimage.setImageResource(R.drawable.capybara3);
         // change this to id ^
         return itemView;
 

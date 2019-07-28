@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.galleryLV);
 
 
+//        productslist.add(new Product("bag", 3, "R.drawable.capybara1"));
         productslist.add(new Product("Gucci bag", 3, Uri.parse("res:///" + R.drawable.capybara1).toString()));
         productslist.add(new Product("Nike shoes", 10,Uri.parse("res:///" + R.drawable.capybara2).toString()));
         productslist.add(new Product("FIla bag", 9,Uri.parse("res:///" + R.drawable.capybara3).toString()));
