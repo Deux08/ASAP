@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
     ListView listView;
     View view;
     String itemList[] = {"shirt", "shoe", "hat", "bag", "apple"};
-    int img [] = {R.drawable.capybara1, R.drawable.capybara2, R.drawable.capybara3, R.drawable.capybara4, R.drawable.capybara5};
+    int img [] = {R.drawable.capybara3, R.drawable.capybara3, R.drawable.capybara3, R.drawable.capybara4, R.drawable.capybara5};
     List<Product> productslist = new ArrayList<>();
 
 
