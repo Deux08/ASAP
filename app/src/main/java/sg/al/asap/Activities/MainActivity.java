@@ -1,18 +1,29 @@
 package sg.al.asap.Activities;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -23,11 +34,16 @@ import sg.al.asap.R;
 import sg.al.asap.Fragments.SearchFragment;
 import sg.al.asap.Fragments.UserFragment;
 
+import static sg.al.asap.Activities.Constants.ERROR_DIALOG_REQUEST;
+import static sg.al.asap.Activities.Constants.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
+import static sg.al.asap.Activities.Constants.PERMISSIONS_REQUEST_ENABLE_GPS;
+
 public class MainActivity extends AppCompatActivity /*implements NavigationView.OnNavigationItemSelectedListener*/ {
 
     private FirebaseAuth mAuth;
     private BottomNavigationView bottomNavigationView;
     FirebaseUser currentuser;
+
 
     ImageView profilePic;
     TextView userName ;
@@ -83,6 +99,8 @@ public class MainActivity extends AppCompatActivity /*implements NavigationView.
 
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
     }
+
+
 
     public void update(){
          profilePic = (ImageView) findViewById(R.id.profileCircleImageView);
