@@ -15,7 +15,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@drawable/addprofile"
         app:layout_constraintBottom_toTopOf="@+id/regName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

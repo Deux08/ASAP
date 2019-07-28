@@ -201,22 +201,47 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         //url contains user's image url
-                        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
-                                                                     .setDisplayName(name)
-                                                                     .setPhotoUri(uri)
-                                                                     .build();
+                        if (uri == null)
+                        {
 
-                        currentUser.updateProfile(profileUpdate)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if(task.isSuccessful()){
-                                            //user info updated successfully
-                                            showMessage("Registration successful");
-                                            updateUI();
+                            UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
+                                    .setPhotoUri(Uri.parse("android.resource://sg.al.asap/mipmap-xxxhdpi/ic_launcher.png"))
+                                    .build();
+
+                            currentUser.updateProfile(profileUpdate)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                //user info updated successfully
+                                                showMessage("Registration successful");
+                                                updateUI();
+                                            }
                                         }
-                                    }
-                                });
+                                    });
+                        }
+
+                        else
+                        {
+                            UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
+                                    .setPhotoUri(uri)
+                                    .build();
+
+                            currentUser.updateProfile(profileUpdate)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                //user info updated successfully
+                                                showMessage("Registration successful");
+                                                updateUI();
+                                            }
+                                        }
+                                    });
+                        }
+
                     }
                 });
 
