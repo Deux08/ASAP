@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
     int img [] = {R.drawable.capybara1, R.drawable.capybara2, R.drawable.capybara3, R.drawable.capybara4, R.drawable.capybara5};
     List<Product> productslist = new ArrayList<>();
 
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         listView = view.findViewById(R.id.galleryLV);
