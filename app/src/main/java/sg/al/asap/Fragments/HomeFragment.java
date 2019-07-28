@@ -38,11 +38,11 @@ public class HomeFragment extends Fragment {
         listView = view.findViewById(R.id.galleryLV);
 
 
-        productslist.add(new Product("bag", 3, R.drawable.capybara1));
-        productslist.add(new Product("soft toy", 5, R.drawable.capybara2));
-        productslist.add(new Product("bag2", 7, R.drawable.capybara3));
-        productslist.add(new Product("rat 2", 100, R.drawable.capybara4));
-        productslist.add(new Product("rat bag", 99, R.drawable.capybara5));
+        productslist.add(new Product("Gucci bag", 3, R.drawable.guccibag));
+        productslist.add(new Product("soft toy", 5, R.drawable.bag));
+        productslist.add(new Product("bag2", 7, R.drawable.shoe));
+        productslist.add(new Product("hat", 100, R.drawable.hat));
+        productslist.add(new Product("shirt", 99, R.drawable.shirt));
         productslist.add(new Product("cute rat for sale", 30, R.drawable.capybara5));
 
 
