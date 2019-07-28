@@ -40,7 +40,7 @@ public class CartFragment extends Fragment {
         ShakeDetector.create(getActivity(), new ShakeDetector.OnShakeListener() {
             @Override
             public void OnShake() {
-                Toast.makeText(getContext(), "Device shaken!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "You have checked out and will receive your item tomorrow.", Toast.LENGTH_SHORT).show();
                 Log.d("Shake", "OnShake: shake");
 
                 Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
