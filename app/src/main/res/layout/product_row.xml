@@ -35,7 +35,7 @@
         android:layout_marginBottom="8dp"
         android:text="Product Name"
         android:textStyle="bold"
-        android:textColor="white"
+        android:textColor="#fff"
         app:layout_constraintBottom_toTopOf="@+id/pPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -53,7 +53,7 @@
         android:layout_marginBottom="44dp"
         android:text="price"
         android:textSize="12sp"
-        android:textColor="white"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="@+id/ppic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ppic" />
