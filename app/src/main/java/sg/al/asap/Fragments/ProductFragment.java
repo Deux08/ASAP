@@ -1,5 +1,6 @@
 package sg.al.asap.Fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +22,9 @@ import java.io.File;
 import sg.al.asap.R;
 
 public class ProductFragment extends Fragment {
+
+    TextView Name;
+    TextView Cost;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,9 +40,10 @@ public class ProductFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView Name = (TextView) view.findViewById(R.id.productname);
-        TextView Cost = (TextView) view.findViewById(R.id.productcost);
+        Name = (TextView) view.findViewById(R.id.productname);
+        Cost = (TextView) view.findViewById(R.id.productcost);
         ImageView image = (ImageView) view.findViewById(R.id.productimg);
+        Button addBtn = (Button) view.findViewById(R.id.addbtn);
 
         Bundle bundle = this.getArguments();
 
@@ -47,11 +53,17 @@ public class ProductFragment extends Fragment {
 //        Uri imgUri = Uri.parse(getImageFilePath);
 
 
-
         Name.setText(getName);
         Cost.setText("$"  + getCost);
 //        image.setImageURI(imgUri);
         image.setImageResource(getImageFilePath);
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 }
