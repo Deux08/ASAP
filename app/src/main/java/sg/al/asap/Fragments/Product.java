@@ -16,7 +16,6 @@ public class Product {
     public String getImageFilePath() {
         return filePath;
     }
-
     public String getName() {
         return name;
     }

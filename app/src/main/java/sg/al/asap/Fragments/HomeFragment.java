@@ -39,11 +39,11 @@ public class HomeFragment extends Fragment {
 
 
         productslist.add(new Product("Gucci bag", 3, Uri.parse("res:///" + R.drawable.capybara1).toString()));
-        productslist.add(new Product("Nike shoes", 10,Uri.parse("res:///" + R.drawable.capybara1).toString()));
-        productslist.add(new Product("FIla bag", 9,Uri.parse("res:///" + R.drawable.capybara1).toString()));
-        productslist.add(new Product("Chanel perfume", 6,Uri.parse("res:///" + R.drawable.capybara1).toString()));
-        productslist.add(new Product("Unik shirt", 5,Uri.parse("res:///" + R.drawable.capybara1).toString()));
-        productslist.add(new Product("dog", 11,Uri.parse("res:///" + R.drawable.capybara1).toString()));
+        productslist.add(new Product("Nike shoes", 10,Uri.parse("res:///" + R.drawable.capybara2).toString()));
+        productslist.add(new Product("FIla bag", 9,Uri.parse("res:///" + R.drawable.capybara3).toString()));
+        productslist.add(new Product("Chanel perfume", 6,Uri.parse("res:///" + R.drawable.capybara4).toString()));
+        productslist.add(new Product("Unik shirt", 5,Uri.parse("res:///" + R.drawable.capybara5).toString()));
+        productslist.add(new Product("dog", 11,Uri.parse("res:///" + R.drawable.capybara5).toString()));
 
 
         ProductAdapter adapter = new ProductAdapter(view.getContext(), productslist);
@@ -54,36 +54,7 @@ public class HomeFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
     }
-//    void showlistview (){
 //
-//        Intent intent = new Intent(HomeFragment.this);
-//        startActivity(intent);
-//
-//    }
-
-
-//    public View onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState, @NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
-//        super.onViewCreated(view, savedInstanceState);
-//        listView = getActivity().findViewById(R.id.galleryLV);
-//        final ArrayList<Product> productslist = new ArrayList<>();
-//        productslist.add(new Product("gucci bag", 3));
-//        productslist.add(new Product("bag", 5));
-//        view =inflater.inflate(R.layout.fragment_home, container, false);
-//
-//        final ProductAdapter adapter = new ProductAdapter(view.getContext(), R.layout.product_row, productslist);
-//        listView.setAdapter(adapter);
-//        return view;
-//
-////    }
-//
-//    //    int images  [] = {R.drawable.shirt, R.drawable.shoe, R.drawable.hat, R.drawable.bag, R.drawable.apple};
-//    @Nullable
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_home, container, false);
-//    }
-
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
