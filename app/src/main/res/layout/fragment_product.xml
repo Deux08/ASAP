@@ -7,61 +7,67 @@
     android:layout_height="match_parent">
 
     <ImageView
+
         android:id="@+id/productimg"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/productname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/productname"
+        style="@style/viewParent.headerText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="28dp"
+        android:text="Product Name"
+        android:textAlignment="center"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:text="Product Name"
+        app:layout_constraintBottom_toTopOf="@+id/productcost"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productimg" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/productcost"
+        style="@style/viewParent.headerText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:text="$ Cost"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/addbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productname" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/addbtn"
         android:layout_width="243dp"
-        android:layout_height="51dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/reg_btn_style"
+        android:layout_marginBottom="160dp"
+        android:background="@drawable/prod_btn_style"
         android:text="Add to cart"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productcost"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
