@@ -45,20 +45,22 @@ public class ProductAdapter extends BaseAdapter {
         View itemView = convertView;
         Product product = productsList.get(position);
 
+
         itemView = LayoutInflater.from(context).inflate(R.layout.product_row,parent,false);
+
 //        product name
         TextView productName = itemView.findViewById(R.id.pName);
         productName.setText(productsList.get(position).getName());
+
 //        product price
         TextView productPrice = itemView.findViewById(R.id.pPrice);
         productPrice.setText(String.valueOf(productsList.get(position).getCost()));
+
 //        product image
+//        (using getresource().getidentifier() to be able to identify the id of the image)
         ImageView productimage =itemView.findViewById(R.id.ppic);
         int id = context.getResources().getIdentifier(String.valueOf(product.getImageFilePath()),null,context.getPackageName());
         productimage.setImageResource(id);
-//        productimage.setImageResource(context.getResources().getDrawable(product.getImageFilePath()));
-//        productimage.setImageResource(R.drawable.capybara3);
-        // change this to id ^
         return itemView;
 
 

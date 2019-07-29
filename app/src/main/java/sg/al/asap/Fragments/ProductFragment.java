@@ -35,22 +35,22 @@ public class ProductFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+//        findviewbyid
         TextView Name = (TextView) view.findViewById(R.id.productname);
         TextView Cost = (TextView) view.findViewById(R.id.productcost);
         ImageView image = (ImageView) view.findViewById(R.id.productimg);
 
+//        retrieving the data from the bundle
         Bundle bundle = this.getArguments();
 
+//        Getting the data (cost, name, image path)
         String getName = bundle.getString("Name", "Test");
         int getCost = bundle.getInt("Cost");
         int getImageFilePath = bundle.getInt("Image");
-//        Uri imgUri = Uri.parse(getImageFilePath);
 
-
-
+//        setting the data into the textview, imageview
         Name.setText(getName);
         Cost.setText("$"  + getCost);
-//        image.setImageURI(imgUri);
         image.setImageResource(getImageFilePath);
     }
 

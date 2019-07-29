@@ -37,16 +37,15 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         listView = view.findViewById(R.id.galleryLV);
 
-
+//        adding the name, cost and image into list
         productslist.add(new Product("Guccie bag", 300, R.drawable.gucci_bag));
         productslist.add(new Product("Rose gold bag", 59, R.drawable.bag));
         productslist.add(new Product("Vintage shoe ", 78, R.drawable.shoe));
         productslist.add(new Product("Plain Pink Cap", 100, R.drawable.hat));
         productslist.add(new Product("Plain Cotton shirt", 99, R.drawable.shirt));
-//        productslist.add(new Product("cute rat for sale", 30, R.drawable.capybara5));
 
 
-
+//        gettign the product adapter
         ProductAdapter adapter = new ProductAdapter(view.getContext(), productslist);
         listView.setAdapter(adapter);
         return view;
@@ -55,18 +54,20 @@ public class HomeFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
     }
-//
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+//        setting on click so that it would bring to the product page
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Product product = productslist.get(position);
                 Log.i("testy", "I Clicked on Row " + position + " and it shows ");
 
+//                putting it into a bundle to bring the data over to the product page
                 Fragment fragment = new ProductFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("Name", product.getName());
@@ -74,6 +75,7 @@ public class HomeFragment extends Fragment {
                 bundle.putInt("Image", product.getImageFilePath());
                 fragment.setArguments(bundle);
 
+//                transfering the data
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_layout, fragment);

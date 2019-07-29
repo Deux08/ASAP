@@ -5,15 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--<ImageView-->
-        <!--android:id="@+id/productpic"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--android:layout_width="90dp"-->
-        <!--android:layout_height="90dp"-->
-        <!--tools:layout_editor_absoluteX="16dp"-->
-        <!--tools:layout_editor_absoluteY="0dp"-->
-        <!--tools:srcCompat="@tools:sample/avatars" />-->
+
 
     <ImageView
         android:id="@+id/ppic"
