@@ -34,8 +34,10 @@ public class SearchFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Create ArrayList to store product names
         ArrayList<String> product_list = new ArrayList<>();
 
+        // Add product names to product_list
         product_list.add("Guccie bag");
         product_list.add("Rose gold bag");
         product_list.add("Vintage shoe");
@@ -49,6 +51,8 @@ public class SearchFragment extends Fragment {
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.search_listview, R.id.search_listview, product_list);
         searchList.setAdapter(adapter);
 
+
+        // Search for product in the search bar and it will show the searched item
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -62,14 +66,13 @@ public class SearchFragment extends Fragment {
             }
         });
 
+
+        // Click on a searched item and it will lead to the product details page
         searchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Fragment fragment = new ProductFragment();
                 Bundle bundle = new Bundle();
-//                bundle.putString("Name", product.getName());
-//                bundle.putInt("Cost", product.getCost());
-//                bundle.putInt("Image", product.getImageFilePath());
                 fragment.setArguments(bundle);
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
