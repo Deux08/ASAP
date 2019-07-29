@@ -12,15 +12,52 @@
 
         <Button
             android:id="@+id/checkoutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="228dp"
-            android:layout_marginTop="376dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="488dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/prod_btn_style"
             android:text="Check Out"
+            android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.574"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="112dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="428dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.233"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="105dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="56dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/item_name"
+            app:layout_constraintTop_toBottomOf="@+id/cartLV" />
+
+        <ListView
+            android:id="@+id/cartLV"
+            android:layout_width="match_parent"
+            android:layout_height="361dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/item_price"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
     </android.support.constraint.ConstraintLayout>
 </RelativeLayout>

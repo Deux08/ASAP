@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -31,49 +34,19 @@ public class SearchFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ArrayList<String> avengers = new ArrayList<>();
-        avengers.add("Iron Man");
-        avengers.add("Captain America");
-        avengers.add("Vision");
-        avengers.add("Hawk Eye");
-        avengers.add("Ant-Man");
-        avengers.add("Spider-Man");
-        avengers.add("Captain Marvel");
-        avengers.add("Doctor Strange");
-        avengers.add("Black Panther");
-        avengers.add("Hulk");
-        avengers.add("Star Lord");
-        avengers.add("Rocket");
-        avengers.add("Groot");
-        avengers.add("Thor");
-        avengers.add("Quicksilver");
-        avengers.add("Scarlet Witch");
-        avengers.add("Falcon");
-        avengers.add("War Machine");
-        avengers.add("Iron Man");
-        avengers.add("Captain America");
-        avengers.add("Vision");
-        avengers.add("Hawk Eye");
-        avengers.add("Ant-Man");
-        avengers.add("Spider-Man");
-        avengers.add("Captain Marvel");
-        avengers.add("Doctor Strange");
-        avengers.add("Black Panther");
-        avengers.add("Hulk");
-        avengers.add("Star Lord");
-        avengers.add("Rocket");
-        avengers.add("Groot");
-        avengers.add("Thor");
-        avengers.add("Quicksilver");
-        avengers.add("Scarlet Witch");
-        avengers.add("Falcon");
-        avengers.add("War Machine");
+        ArrayList<String> product_list = new ArrayList<>();
+
+        product_list.add("Guccie bag");
+        product_list.add("Rose gold bag");
+        product_list.add("Vintage shoe");
+        product_list.add("Plain Pink Cap");
+        product_list.add("Plain Cotton shirt");
 
         SearchView searchBar = (SearchView) view.findViewById(R.id.searchBar);
         ListView searchList = (ListView) view.findViewById(R.id.searchList);
 
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.search_listview, R.id.search_listview, avengers);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.search_listview, R.id.search_listview, product_list);
         searchList.setAdapter(adapter);
 
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -88,7 +61,23 @@ public class SearchFragment extends Fragment {
                 return false;
             }
         });
+
+        searchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Fragment fragment = new ProductFragment();
+                Bundle bundle = new Bundle();
+//                bundle.putString("Name", product.getName());
+//                bundle.putInt("Cost", product.getCost());
+//                bundle.putInt("Image", product.getImageFilePath());
+                fragment.setArguments(bundle);
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_layout, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
     }
-
-
 }

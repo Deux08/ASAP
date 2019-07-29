@@ -14,15 +14,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.tbouron.shakedetector.library.ShakeDetector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import sg.al.asap.Activities.CheckOutActivity;
 import sg.al.asap.R;
 
 public class CartFragment extends Fragment {
+
+    TextView Name;
+    TextView Cost;
+//    List<String> cartList = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,7 +46,7 @@ public class CartFragment extends Fragment {
         ShakeDetector.create(getActivity(), new ShakeDetector.OnShakeListener() {
             @Override
             public void OnShake() {
-                Toast.makeText(getContext(), "Device shaken!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "You have checked out and will receive your item tomorrow.", Toast.LENGTH_SHORT).show();
                 Log.d("Shake", "OnShake: shake");
 
                 Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
@@ -49,10 +60,32 @@ public class CartFragment extends Fragment {
             }
         });
 
+//        ListView cartLV = getActivity().findViewById(R.id.cartLV);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.cart_listview, cartList);
+//
+//        Bundle bundle = this.getArguments();
+//        String getName = bundle.getString("Name", "Test");
+//        int getCost = bundle.getInt("Cost");
+//
+//        cartList.add(getName + " " + getCost);
+//        cartLV.setAdapter(adapter);
+
     }
 
     public void onViewCreated(final View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+
+        Name = view.findViewById(R.id.item_name);
+        Cost = view.findViewById(R.id.item_price);
+
+        Bundle bundle = this.getArguments();
+
+        if (bundle != null) {
+            String getName = bundle.getString("Name", "Test");
+            int getCost = bundle.getInt("Cost");
+            Name.setText(getName);
+            Cost.setText("$"  + getCost);
+        }
 
         Button checkOutBtn = (Button)view.findViewById(R.id.checkoutBtn);
         checkOutBtn.setOnClickListener(new View.OnClickListener() {
