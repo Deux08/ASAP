@@ -40,27 +40,31 @@ public class ProductFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+//        findviewbyid in the textview
         Name = (TextView) view.findViewById(R.id.productname);
         Cost = (TextView) view.findViewById(R.id.productcost);
         ImageView image = (ImageView) view.findViewById(R.id.productimg);
         Button addBtn = (Button) view.findViewById(R.id.addbtn);
 
+//        Rretrieving the data from the bundle
         Bundle bundle = this.getArguments();
 
+//        Getting and storing data into variables
         final String getName = bundle.getString("Name", "Test");
         final int getCost = bundle.getInt("Cost");
         int getImageFilePath = bundle.getInt("Image");
-//        Uri imgUri = Uri.parse(getImageFilePath);
 
-
+//        Setting the data in to the imageview, textview
         Name.setText(getName);
         Cost.setText("$"  + getCost);
-//        image.setImageURI(imgUri);
         image.setImageResource(getImageFilePath);
 
+
+//        Onclick to add product to cart
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//              add the data into another bundle
                 Fragment fragment = new CartFragment();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("Name", getName);

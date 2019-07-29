@@ -52,9 +52,9 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-//    public interface OnFragmentInteractionListener {
-//        void onFragmentInteraction(Uri uri);
-//    }
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
+    }
 //
 
     @Override
