@@ -11,8 +11,9 @@ public class Product {
         this.name = names;
         this.cost = costs;
         this.filePath = filePath;
-
     }
+
+//    {get, set}
     public int getImageFilePath() { return filePath; }
     public String getName() {
         return name;
@@ -22,9 +23,6 @@ public class Product {
     }
     public int getCost() {
         return cost;
-    }
-    public void setCost(int costs) {
-        this.cost = costs;
     }
 
 }

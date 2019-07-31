@@ -37,42 +37,42 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         listView = view.findViewById(R.id.galleryLV);
 
-
+//        Adding the name, cost and image into a list
         productslist.add(new Product("Guccie bag", 300, R.drawable.gucci_bag));
         productslist.add(new Product("Rose gold bag", 59, R.drawable.bag));
         productslist.add(new Product("Vintage shoe ", 78, R.drawable.shoe));
         productslist.add(new Product("Plain Pink Cap", 100, R.drawable.hat));
         productslist.add(new Product("Plain Cotton shirt", 99, R.drawable.shirt));
-//        productslist.add(new Product("cute rat for sale", 30, R.drawable.capybara5));
 
 
-
+//        product adapter
         ProductAdapter adapter = new ProductAdapter(view.getContext(), productslist);
         listView.setAdapter(adapter);
         return view;
     }
 
-//    public interface OnFragmentInteractionListener {
-//        void onFragmentInteraction(Uri uri);
-//    }
-//
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+//        Setting onclick listener to listview, so that once click product page will open
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
 
                 Product product = productslist.get(position);
                 Log.i("testy", "I Clicked on Row " + position + " and it shows ");
 
+//                putting the data into a bundle, so that it can be transfered to the product page
+//                Then the product page will show the product user has clicked on
                 Fragment fragment = new ProductFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("Name", product.getName());
                 bundle.putInt("Cost", product.getCost());
                 bundle.putInt("Image", product.getImageFilePath());
                 fragment.setArguments(bundle);
+
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -85,4 +85,8 @@ public class HomeFragment extends Fragment {
 
     }
 }
-
+//public interface OnFragmentInteractionListener {
+//    void onFragmentInteraction(Uri uri);
+//}
+//
+//
