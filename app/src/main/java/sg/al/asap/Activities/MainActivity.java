@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity /*implements NavigationView.
     }
 
 
-
+    //updates profile after signin
     public void update(){
          profilePic = (ImageView) findViewById(R.id.profileCircleImageView);
          userName = (TextView) findViewById(R.id.usernameTextView);
@@ -120,6 +120,8 @@ public class MainActivity extends AppCompatActivity /*implements NavigationView.
 
     }
 
+
+    //signs out and create new intent
     public void signOut(){
         mAuth.signOut();
         Intent login = new Intent(this, LoginActivity.class);

@@ -121,12 +121,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    //opens new intent for the ResetPassword Activity
     public void forgetPass(){
         Intent forgetPass = new Intent(getApplicationContext(), ResetPasswordActivity.class);
         startActivity(forgetPass);
         finish();
     }
 
+    //signIn method checks whether its valid or no
     private void signIn(String email, String password) {
 
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -150,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void UpdateUI() {
 

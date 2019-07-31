@@ -34,9 +34,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import sg.al.asap.R;
 
-import static sg.al.asap.Activities.Constants.ERROR_DIALOG_REQUEST;
-import static sg.al.asap.Activities.Constants.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
-import static sg.al.asap.Activities.Constants.PERMISSIONS_REQUEST_ENABLE_GPS;
 
 public class CheckOutActivity extends AppCompatActivity implements OnMapReadyCallback {
 
